@@ -1,0 +1,10 @@
+body {
+	background-color: #ccc;
+}
+.container {
+	margin-bottom: 25px;
+}
+.label{
+	margin: 15px;
+	padding: 10px;
+}
