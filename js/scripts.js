@@ -22,13 +22,19 @@ var newGameBtn = document.getElementById('js-newGameButton'),
     newGameElem = document.getElementById('js-newGameElement'),
     pickElem = document.getElementById('js-playerPickElement'),
     resultsElem = document.getElementById('js-resultsTableElement');
-    
+var newTable = document.getElementById('js-tableResults');
+var resultsPlayer = document.createElement('h1');
+var resultsComputer = document.createElement('h1');
+        resultsPlayer.innerHTML = 'Gratulacje Wygrałeś !';
+        resultsComputer.innerHTML = 'Niestety wygrał komputer !';
+
 function setGameElements() {
   switch(gameState) {
     case 'started':
         newGameElem.style.display = 'none';
         pickElem.style.display = 'block';
         resultsElem.style.display = 'block';
+        newTable.innerHTML = '';
       break;
     case 'ended':
         newGameBtn.innerText = 'Jeszcze raz';
@@ -37,6 +43,7 @@ function setGameElements() {
         newGameElem.style.display = 'block';
         pickElem.style.display = 'none';
         resultsElem.style.display = 'none';
+
     }
 }
 setGameElements();
@@ -127,10 +134,6 @@ function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score;
 }
-var newTable = document.getElementById('js-tableResults');
-var resultsPlayer = document.createElement('h1');
-var resultsComputer = document.createElement('h1');
-resultsPlayer.innerHTML = 'Gratulacje Wygrałeś !';
-resultsComputer.innerHTML = 'Niestety wygrał komputer !';
+
 
 
